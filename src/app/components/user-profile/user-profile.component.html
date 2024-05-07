@@ -1,0 +1,57 @@
+<app-user-navbar></app-user-navbar>
+
+<div class="profile-container">
+  <div class="left-rectangle">
+    <div class="image-container">
+      <img src="https://qph.cf2.quoracdn.net/main-qimg-6d72b77c81c9841bd98fc806d702e859-lq" alt="Facebook Profile Update" />
+    </div>
+    <div class="user-name">
+      <div class="user-name">
+        <p *ngIf=" editName">{{ user.name }}</p>
+        <ng-template #editName>
+          <input
+            class="attribute-input"
+            type="text"
+            [(ngModel)]="editedUser.name"
+          />
+        </ng-template>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="right-rectangle">
+    <div class="user-info">
+      <div
+        *ngFor="
+          let attr of [
+            { label: 'Name', key: 'name' },
+            { label: 'Gender', key: 'gender' },
+            { label: 'Date of Birth', key: 'dateOfBirth' },
+            { label: 'Phone Number', key: 'phoneNumber' },
+            { label: 'Address', key: 'address' },
+            { label: 'Email', key: 'email' }
+          ]
+        "
+        class="user-attribute"
+      >
+        <p class="attribute-label">{{ attr.label }}:</p>
+        <p class="attribute-value" *ngIf="!editMode">{{ user[attr.key] }}</p>
+        <input
+          class="attribute-input"
+          [type]="attr.key === 'dateOfBirth' ? 'date' : 'text'"
+          [(ngModel)]="editedUser[attr.key]"
+          *ngIf="editMode"
+        />
+      </div>
+    </div>
+    <div class="button-group">
+      <button class="edit-profile-btn" (click)="toggleEditMode()">
+        {{ editMode ? 'Save' : 'Edit Profile' }}
+      </button>
+      <button class="cancel-btn" *ngIf="editMode" (click)="cancelEdit()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

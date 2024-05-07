@@ -1,0 +1,86 @@
+<app-company-navbar></app-company-navbar>
+<body>
+  <!-- Header -->
+  <header>
+      <h1 id="Page-header">Applications Review</h1>
+  </header>
+
+  <div class="left-side">
+    <iframe
+      id="iframe"
+      src="https://www.sbs.ox.ac.uk/sites/default/files/2019-01/cv-template.pdf"
+    ></iframe>
+  </div>
+
+  <div class="right-side">
+    <!-- Jobs Dropdown List -->
+    <div class="droplist-container">
+      <label for="jobsDroplist" class="label">Listed Jobs</label>
+      <select id="jobsDroplist" class="droplist">
+        <option value="front-end developer">Front-end developer</option>
+        <option value="back-end developer">Back-end developer</option>
+        <option value="software engineer">Software engineer</option>
+      </select>
+    </div>
+
+    <!-- Dynamic Panel with all Applicants -->
+
+    <div id="Panel" class="panel" >
+      <label for="Applicants">Applicants</label>
+        <div id="state1" class="panel_state"
+          data-label="job1">
+          <!-- front-end (Droplist) -->
+            <select id="list-1" class="droplist">
+              <option class="u6_input_option" selected="" value="ahmed-resume"> ahmed-resume </option>
+              <option class="u6_input_option" value="amir-resume">amir-resume</option>
+              <option class="u6_input_option" value="ali-resume">ali-resume</option>
+            </select>
+        </div>
+        
+        <!--    <div
+        id="state2"
+        class="panel_state"
+        data-label="job2"
+        style="visibility: hidden; display: none;">
+            back-end (Droplist) 
+            <select id="list-2" class="droplist" tabindex="0">
+              <option class="option" selected="" value="Benjamin-resume">
+                Benjamin-resume
+              </option>
+              <option class="option" value="Billy-resume">Billy-resume</option>
+            </select>
+      </div>
+      <div
+        id="state3"
+        class="panel_state"
+        data-label="software engineer"
+        style="visibility: hidden; display: none;">
+         testing (Droplist)
+        <select id="list-3" class="droplist">
+          <option value="calvin-resume">calvin-resume</option>
+        </select>
+      </div>--> 
+    </div>
+
+    <!-- Application Status -->
+    <div id="status-container">
+      <label> Application current status </label> 
+      <div id="status-container"><label id="status">Accepted</label> </div>
+    </div>
+
+    <!-- Status Buttons -->
+    <div id="buttons-container">
+      <button id="accept-button" class="button">Accepted</button>
+      <button id="reject-button" class="button">Rejected</button>
+    </div>
+
+    <div>
+      <label for="Accepted-Msg" style="visibility: hidden;"
+        >has been accepted</label
+      >
+      <label for="Accepted-Msg" style="visibility: hidden;"
+        >has been rejected</label
+      >
+    </div>
+  </div>
+</body>

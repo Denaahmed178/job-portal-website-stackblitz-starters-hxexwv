@@ -1,0 +1,27 @@
+<body>
+  <div id="PageContainer">
+    <form action="">
+      <div class="loginElements">
+        <label id="login-header">LOG IN </label>
+        <input type="email" id="email_input" placeholder="enter your email" />
+        <input
+          type="password"
+          id="password_input"
+          placeholder="enter your password"
+        />
+        <button id="btn_login" routerLink='/welcome-page'>LOGIN</button>
+      </div>
+    </form>
+    <div class="error-message">
+      <!-- Display error message here -->
+    </div>
+    <div>
+      <!-- <p id="footer">Sign up as</p> <a id="link1" href=" ">job seeker </a><p id="or">or</p> <a id="link2" href=" ">company</a> -->
+      <p id="footer">Sign up as</p>
+      <a id="link1" [routerLink]="['/user-registration']">job seeker</a>
+      <p id="or">or</p>
+      <!-- <a id="link2" [routerLink]="['/company-registration']">company</a> -->
+      <a id="link2" [routerLink]="['/company-registration']">company</a>
+    </div>
+  </div>
+</body>

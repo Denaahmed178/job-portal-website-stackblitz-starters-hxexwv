@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-registration',
   templateUrl: './user-registration.component.html',
@@ -15,6 +15,7 @@ export class UserRegistrationComponent {
   skills: string= '';;
   education: string= '';;
   showErrorMessage: boolean = false;
+  constructor(private router: Router) {}
 
   checkPasswordStrength() {
     if (this.password.length < 5) {
@@ -63,6 +64,7 @@ export class UserRegistrationComponent {
   submitForm() {
     if (this.password === this.confirmPassword) {
       // Passwords match, perform form submission or navigate to the next page
+      this.router.navigate(['']);
     } else {
       this.showErrorMessage = true;
     }
